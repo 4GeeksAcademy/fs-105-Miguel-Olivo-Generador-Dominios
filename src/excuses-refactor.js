@@ -1,20 +1,23 @@
-const fs = require('fs');
+window.onload= ()=>{
+  let excuses = [
+    'I am too busy',
+    'I am sick',
+    'I forgot',
+    'I have an appointment',
+    'I am tired',
+  ];
+  
+  let results = [];
+  
+  excuses.forEach(excuse => {
+    results.push(excuse);
+  });
+  
+  let p = document.getElementById("Identificar")
+  p.textContent= results.join('\n')
+  // Escribir los resultados en el archivo 'excuses.txt'
 
-let excuses = [
-  'I am too busy',
-  'I am sick',
-  'I forgot',
-  'I have an appointment',
-  'I am tired',
-];
+}
 
-let results = [];
-
-excuses.forEach(excuse => {
-  results.push(excuse);
-});
-
-// Escribir los resultados en el archivo 'excuses.txt'
-fs.writeFileSync('resultados/excuses.txt', results.join('\n'));
 
 console.log('Resultados guardados en resultados/excuses.txt');
